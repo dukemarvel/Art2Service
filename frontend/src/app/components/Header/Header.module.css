@@ -1,0 +1,87 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #fff;
+    align-items: center;
+    font-family: Urbanist;
+  }
+  
+  .logo {
+    font-weight: bold;
+    color: #000080;
+    font-family: Urbanist;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 38px;
+    letter-spacing: 0em;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav ul li {
+    margin-right: 20px;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #000080;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .nav ul {
+      display: none; /* Hide the navigation links by default on mobile */
+    }
+  
+    .button {
+      display: none; /* Hide the button by default on mobile */
+    }
+  
+    .nav.mobile-menu-open ul {
+      display: flex; /* Display the navigation links when the mobile menu is open */
+      flex-direction: column; /* Stack the links vertically */
+      position: absolute;
+      top: 80px; /* Adjust the distance from the top */
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav.mobile-menu-open ul li {
+      margin-right: 0; /* Remove margin between mobile links */
+    }
+  
+    .hamburger-icon {
+      display: block; /* Display the hamburger icon by default on mobile */
+      cursor: pointer;
+    }
+  
+    .close-icon {
+      display: none; /* Hide the close icon by default on mobile */
+      cursor: pointer;
+    }
+  }
+  
