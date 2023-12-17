@@ -1,42 +1,34 @@
-// Header.js
-
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
-import { useState } from 'react'; // Import useState
 import styles from './Header.module.css';
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State to track mobile menu
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
     <header className={styles.header}>
+      <div className={`${styles.menu} ${isOpen ? styles.showMenu : ''}`} onClick={toggleMenu}>
+        {isOpen ? 'X' : '☰'}
+      </div>
       <div className={styles.logo}>ARTISAN</div>
-
-      {/* Hamburger Icon */}
-      <div className={`${styles.hamburgerIcon} ${mobileMenuOpen ? styles.hide : ''}`} onClick={toggleMobileMenu}>
-        ☰
-      </div>
-
-      {/* Close Icon */}
-      <div className={`${styles.closeIcon} ${!mobileMenuOpen ? styles.hide : ''}`} onClick={toggleMobileMenu}>
-        ✕
-      </div>
-
-      {/* Navigation */}
-      <nav className={`${styles.nav} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
+      <nav className={`${styles.nav} ${isOpen ? styles.showMenu : ''}`}>
+        <nav className={styles.mobileMenu}>
         <ul>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/about">About Us</Link></li>
           <li><Link href="/professionals">Professionals</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
+          <li><Link href="/services">Our Services</Link></li>
+          <li><Link href="/market">Mini-market</Link></li>
+          <li><Link href="/recruitment">Recruitment</Link></li>
+          <li><Link href="/training">Training</Link></li>
         </ul>
+        </nav>
       </nav>
-
-      {/* Button */}
       <button className={styles.button}>Signup</button>
     </header>
   );
