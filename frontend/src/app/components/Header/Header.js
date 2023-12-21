@@ -12,10 +12,12 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.menu} ${isOpen ? styles.showMenu : ''}`} onClick={toggleMenu}>
-        {isOpen ? 'X' : '☰'}
+      <div className={styles.mobileView}>
+        <div className={`${styles.menu} ${isOpen ? styles.showMenu : ''}`} onClick={toggleMenu}>
+          {isOpen ? 'X' : '☰'}
+        </div>
+        <div className={styles.logo}>ARTISAN</div>
       </div>
-      <div className={styles.logo}>ARTISAN</div>
       <nav className={`${styles.nav} ${isOpen ? styles.showMenu : ''}`}>
         <nav className={styles.mobileMenu}>
         <ul>
