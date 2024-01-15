@@ -1,0 +1,41 @@
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    background-color: #f0f0f0; /* Adding background color similar to the image */
+  }
+  
+  .newsletter h2 {
+    color: black;
+  }
+  
+  .newsletter p {
+    color: #999999;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input[type="email"] {
+    padding-left: 10px; 
+    height: 40px; 
+    width: 300px;
+    border-radius: 5px; 
+    border: solid thin #ccc;
+  }
+  
+  .button {
+    background-color: #000080;
+    color: white; 
+    height: 40px; 
+    width: 150px; 
+  }
+  

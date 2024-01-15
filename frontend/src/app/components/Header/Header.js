@@ -1,6 +1,6 @@
-'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -11,11 +11,18 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <motion.header className={styles.header}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className={styles.mobileView}>
-        <div className={`${styles.menu} ${isOpen ? styles.showMenu : ''}`} onClick={toggleMenu}>
+        <motion.div className={`${styles.menu} ${isOpen ? styles.showMenu : ''}`} onClick={toggleMenu}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+        >
           {isOpen ? 'X' : '☰'}
-        </div>
+        </motion.div>
         <div className={styles.logo}>ARTISAN</div>
       </div>
       <nav className={`${styles.nav} ${isOpen ? styles.showMenu : ''}`}>
@@ -31,8 +38,13 @@ const Header = () => {
         </ul>
         </nav>
       </nav>
-      <button className={styles.button}>Signup</button>
-    </header>
+      <motion.button className={styles.button}
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.3 }}
+      >
+        Signup
+      </motion.button>
+    </motion.header>
   );
 };
 

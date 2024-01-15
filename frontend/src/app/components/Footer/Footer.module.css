@@ -1,0 +1,36 @@
+.footer {
+    background-color: #000080; 
+    color: white;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    min-height: 200px;
+    margin: auto;
+  }
+  
+  .navList {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+    
+  }
+  
+  .navList li {
+    display: inline;
+  }
+  
+  .navList a {
+    color: white;
+    text-decoration: none;
+  }
+
+  
+  .navList a:hover {
+    color: #cccccc;
+    
+  }
+  

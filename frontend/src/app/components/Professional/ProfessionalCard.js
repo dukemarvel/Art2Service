@@ -1,14 +1,17 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from './ProfessionalCard.module.css'; 
-
 
 const imageStyle = {
     borderRadius: '5%',
-  }
+}
 
 function ProfessionalCard({ imagePath }) { 
   return (
-    <div className={styles.card}>
+    <motion.div className={styles.card}
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className={styles.imageContainer}>
         <Image 
           src={imagePath}
@@ -20,9 +23,14 @@ function ProfessionalCard({ imagePath }) {
         />
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.button}>Professional</button>
+        <motion.button className={styles.button}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+        >
+          Professional
+        </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

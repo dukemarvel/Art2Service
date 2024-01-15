@@ -1,0 +1,36 @@
+.serviceContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 0.5% 6%;
+    
+}
+
+.title{
+    color: var(--primary-color);
+    padding-left: 10px;
+}
+
+.serviceBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.serviceBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: azure;
+}
+
+.serviceBox span{
+    color: var(--primary-color);
+    margin-top: 3px;
+    font-weight: 900;
+}

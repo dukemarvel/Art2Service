@@ -114,7 +114,7 @@
   /* Add styles for mobile navigation */
 .mobileMenu {
 position: absolute;
-top: 60px; /* Adjust the distance from the top */
+top: 60px; 
 left: 0;
 width: 100%;
 background-color: #fff;
@@ -126,7 +126,7 @@ box-sizing: border-box;
 
 .mobileMenu ul {
 display: flex;
-flex-direction: column; /* Display menu items vertically */
+flex-direction: column; 
 list-style-type: none;
 gap: 20px;
 }
