@@ -23,7 +23,14 @@ const Header = () => {
         >
           {isOpen ? 'X' : '☰'}
         </motion.div>
-        <div className={styles.logo}>ARTISAN</div>
+        <motion.img 
+                    src="/logo.png" 
+                    alt="Logo"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    width={150}
+                />
       </div>
       <nav className={`${styles.nav} ${isOpen ? styles.showMenu : ''}`}>
         <nav className={styles.mobileMenu}>

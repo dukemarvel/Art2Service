@@ -33,4 +33,24 @@
     color: #cccccc;
     
   }
+
+@media(max-width: 720px){
+
+  .footer{
+    padding-top: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .container{
+    gap: 40px;
+  }
+  .navList{
+    flex-wrap: wrap;
+  }
+
+  .navList li{
+    font-size: smaller;
+  }
+}
   

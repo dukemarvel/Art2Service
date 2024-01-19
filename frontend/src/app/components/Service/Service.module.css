@@ -34,3 +34,11 @@
     margin-top: 3px;
     font-weight: 900;
 }
+
+@media(max-width: 720px){
+   
+    .serviceBody{
+        gap: 15px;
+    }
+    
+}
