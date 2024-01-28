@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './Header.module.css';
 
-const Header = () => {
+const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -35,22 +35,24 @@ const Header = () => {
       <nav className={`${styles.nav} ${isOpen ? styles.showMenu : ''}`}>
         <nav className={styles.mobileMenu}>
         <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/about">About Us</Link></li>
-          <li><Link href="/professionals">Professionals</Link></li>
-          <li><Link href="/services">Our Services</Link></li>
-          <li><Link href="/market">Mini-market</Link></li>
+          <li onClick={() => props.homeRef.current?.scrollIntoView({ behavior: 'smooth' })}>Home</li>
+          <li onClick={() => props.aboutUsRef.current?.scrollIntoView({ behavior: 'smooth' })}>About Us</li>
+          <li onClick={() => props.professionalsRef.current?.scrollIntoView({ behavior: 'smooth' })}>Professionals</li>
+          <li onClick={() => props.servicesRef.current?.scrollIntoView({ behavior: 'smooth' })}>Our Services</li>
+          <li><Link href="/mini-market">Mini-market</Link></li>
           <li><Link href="/recruitment">Recruitment</Link></li>
           <li><Link href="/training">Training</Link></li>
         </ul>
         </nav>
       </nav>
-      <motion.button className={styles.button}
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3 }}
-      >
-        Signup
-      </motion.button>
+      <Link href="/signup">
+        <motion.button className={styles.button}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+        >
+          Signup
+        </motion.button>
+      </Link>
     </motion.header>
   );
 };

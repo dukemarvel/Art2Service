@@ -12,6 +12,7 @@ import Footer from "./components/Footer/Footer";
 
 
 
+
 const DynamicMap = dynamic(
   () => import('./components/Map/Map'),
   { ssr: false } 
@@ -20,6 +21,14 @@ const DynamicMap = dynamic(
 
 export default function Home() {
   const ref = useRef(null);
+  const homeRef = useRef(null);
+  const aboutUsRef = useRef(null);
+  const professionalsRef = useRef(null);
+  const servicesRef = useRef(null);
+  const marketRef = useRef(null);
+  const recruitmentRef = useRef(null);
+  const trainingRef = useRef(null);
+
   const { scrollYProgress } = useScroll({ container: ref });
 
   useEffect(() => {
@@ -33,14 +42,30 @@ export default function Home() {
 
   return (
     <motion.div style={{ y: scrollYProgress }} ref={ref}>
-      <Header />
-      <HeroSection/>
-      <Professional/>
-      <Service/>
+      <Header 
+        homeRef={homeRef} 
+        aboutUsRef={aboutUsRef} 
+        professionalsRef={professionalsRef} 
+        servicesRef={servicesRef} 
+        marketRef={marketRef} 
+        recruitmentRef={recruitmentRef} 
+        trainingRef={trainingRef} 
+      />
+  
+      <div ref={homeRef}>
+        <HeroSection/>
+      </div>
+      <div ref={professionalsRef}>
+        <Professional/>
+      </div>
+      <div ref={servicesRef}>
+        <Service/>
+      </div>
       <ContactPage/>
       <DynamicMap/>
       <Newsletter/>
       <Footer/>
     </motion.div>
   );
+  
 }
