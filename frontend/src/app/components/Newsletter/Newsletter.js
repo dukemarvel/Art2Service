@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import styles from './Newsletter.module.css';
 
+
 function Newsletter() {
   const [email, setEmail] = useState('');
 
