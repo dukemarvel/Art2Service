@@ -6,8 +6,14 @@ import Service from './components/Service/Service';
 import ContactPage from './components/ContactUs/ContactPage';
 import Newsletter from "./components/Newsletter/Newsletter";
 import Footer from "./components/Footer/Footer";
+import dynamic from 'next/dynamic';
 
 export default function Home() {
+  const DynamicMap = dynamic(
+    () => import('./components/Map/Map'),
+    { ssr: false } 
+  );
+  
   return (
     <Layout>
       <div ref={Layout.homeRef}>
@@ -20,6 +26,7 @@ export default function Home() {
         <Service/>
       </div>
       <ContactPage/>
+      <DynamicMap/>
       <Newsletter/>
       <Footer/>
     </Layout>

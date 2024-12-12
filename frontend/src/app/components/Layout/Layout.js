@@ -2,12 +2,8 @@
 import { useRef, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import Header from '../Header/Header';
-import dynamic from 'next/dynamic';
 
-const DynamicMap = dynamic(
-  () => import('../Map/Map'),
-  { ssr: false } 
-);
+
 
 const Layout = ({ children }) => {
   const ref = useRef(null);
@@ -42,7 +38,6 @@ const Layout = ({ children }) => {
         trainingRef={trainingRef} 
       />
       {children}
-      <DynamicMap/>
     </motion.div>
   );
 };
